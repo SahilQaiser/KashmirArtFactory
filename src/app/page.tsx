@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Kashmir Art Factory | Handcrafted Kashmiri Woodwork & Art",
   description:
