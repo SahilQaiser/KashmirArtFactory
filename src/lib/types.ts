@@ -20,6 +20,14 @@ export interface Collection {
   sort_order: number;
 }
 
+export interface Video {
+  id: number;
+  title: string;
+  description: string;
+  video_path: string;
+  sort_order: number;
+}
+
 export interface Testimonial {
   id: number;
   name: string;

@@ -95,6 +95,20 @@ INSERT OR IGNORE INTO products (id, name, category, description, image, tag, fea
   ('KAF-403', 'Desk Clock',             'Clocks & 3D Art', 'Compact wooden desk clock with clean lines — handcrafted for a workspace or bedside table.',            '/assets/clocl.jpg',  NULL,          0, 200),
   ('KAF-404', 'Eiffel Tower 3D Model',  'Clocks & 3D Art', 'Precision laser-cut Eiffel Tower model in layered wood — a standout 3D sculpture for any shelf.',      '/assets/eiffel.jpg', NULL,          0, 210);
 
+CREATE TABLE IF NOT EXISTS videos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  video_path TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+-- ─── Seed: videos ─────────────────────────────────────────────────────────────
+
+INSERT OR IGNORE INTO videos (title, description, video_path, sort_order) VALUES
+  ('Handcrafted Lamps', 'Our workshop brings traditional Kashmiri lamp-making to life — every curve carved by hand.', '/assets/vids/lamps.mp4', 1),
+  ('The Craft in Motion', 'A glimpse into the making — from raw walnut to finished art, every step intentional.', '/assets/vids/game1.mp4', 2);
+
 -- ─── Seed: testimonials ───────────────────────────────────────────────────────
 
 INSERT OR IGNORE INTO testimonials (name, role, quote, stars, sort_order) VALUES

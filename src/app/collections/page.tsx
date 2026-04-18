@@ -4,6 +4,7 @@ import CollectionsGallery from "@/components/CollectionsGallery";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getRequestContext } from "@cloudflare/next-on-pages";
+import VideoShowcase from "@/components/VideoShowcase";
 import type { Product } from "@/lib/types";
 
 export const runtime = "edge";
@@ -80,6 +81,9 @@ export default async function CollectionsPage() {
 
         {/* Gallery with filters */}
         <CollectionsGallery products={products} />
+
+        {/* Video showcase */}
+        <VideoShowcase />
 
         {/* Custom order CTA */}
         <section className="bg-kashmir-cream-dark py-16 border-t border-kashmir-border">
