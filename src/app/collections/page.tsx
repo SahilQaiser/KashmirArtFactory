@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CollectionsPage() {
-  const { env } = await getCloudflareContext<CloudflareEnv>();
+  const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
   const { results: products } = await env.DB
     .prepare("SELECT * FROM products ORDER BY sort_order")
     .all<Product>();

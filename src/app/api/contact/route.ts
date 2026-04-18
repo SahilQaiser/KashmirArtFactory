@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { env } = await getCloudflareContext<CloudflareEnv>();
+    const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
     await env.DB.prepare(
       "INSERT INTO contact_messages (id, name, email, phone, message) VALUES (?, ?, ?, ?, ?)"
     )

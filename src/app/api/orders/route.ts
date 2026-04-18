@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { env } = await getCloudflareContext<CloudflareEnv>();
+    const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
     await env.DB.prepare(
       "INSERT INTO custom_orders (id, name, email, phone, product_type, description) VALUES (?, ?, ?, ?, ?, ?)"
     )
