@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomOrderForm from "@/components/CustomOrderForm";
 import { CheckCircle2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Custom Orders",
+  description:
+    "Order a custom wooden piece — your text, your design, your size. We design it with you first, then make it. Fast turnaround, worldwide shipping.",
+  alternates: { canonical: "https://kashmirartfactory.in/custom-orders" },
+  openGraph: {
+    title: "Custom Orders — Kashmir Art Factory",
+    description: "Tell us what you want and we'll make it. Custom sizes, names, quotes — handcrafted in Kashmir.",
+    url: "https://kashmirartfactory.in/custom-orders",
+  },
+};
 
 const whats_included = [
   "A design preview before we cut anything",
@@ -72,7 +85,7 @@ export default function CustomOrdersPage() {
                   we&apos;ll sort it out from there.
                 </p>
                 <a
-                  href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20to%20place%20a%20custom%20order"
+                  href="https://wa.me/917006775320?text=Hi%2C%20I%27d%20like%20to%20place%20a%20custom%20order"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-kashmir-saffron text-white text-sm font-medium px-5 py-3 rounded-sm hover:bg-kashmir-saffron-light transition-colors w-full justify-center"

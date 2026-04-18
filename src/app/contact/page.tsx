@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Kashmir Art Factory — WhatsApp, email, or our contact form. We reply within a few hours.",
+  alternates: { canonical: "https://kashmirartfactory.in/contact" },
+  openGraph: {
+    title: "Contact Kashmir Art Factory",
+    description: "WhatsApp, email, or contact form — we usually reply within a few hours.",
+    url: "https://kashmirartfactory.in/contact",
+  },
+};
 
 const contactDetails = [
   {

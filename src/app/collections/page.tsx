@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CollectionsGallery from "@/components/CollectionsGallery";
@@ -9,10 +10,17 @@ import type { Product } from "@/lib/types";
 
 export const runtime = "edge";
 
-export const metadata = {
-  title: "Collections — Kashmir Art Factory",
+export const metadata: Metadata = {
+  title: "Collections",
   description:
     "Browse our full range of handcrafted wooden wall art — carved engravings, Islamic calligraphy, quote art, clocks, and 3D sculptures. Made in Kashmir.",
+  alternates: { canonical: "https://kashmirartfactory.in/collections" },
+  openGraph: {
+    title: "Collections — Kashmir Art Factory",
+    description: "Carved engravings, Islamic calligraphy, quote art, clocks & 3D sculptures — all handmade in Kashmir.",
+    url: "https://kashmirartfactory.in/collections",
+    images: [{ url: "/assets/mandala.jpg", width: 1200, height: 630, alt: "Kashmir Art Factory collections" }],
+  },
 };
 
 export default async function CollectionsPage() {

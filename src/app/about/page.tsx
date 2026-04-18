@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heart, Zap, MapPin, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "We're a hands-on workshop in Srinagar, Kashmir — making hand-crafted wooden wall art, calligraphy, and custom pieces for homes around the world.",
+  alternates: { canonical: "https://kashmirartfactory.in/about" },
+  openGraph: {
+    title: "About Kashmir Art Factory",
+    description:
+      "A small workshop with a lot of heart — handcrafting wooden art from Srinagar, Kashmir since day one.",
+    url: "https://kashmirartfactory.in/about",
+    images: [{ url: "/assets/bismillah2.jpg", width: 1200, height: 630, alt: "Kashmir Art Factory workshop" }],
+  },
+};
 
 const values = [
   {
