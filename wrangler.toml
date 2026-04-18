@@ -1,0 +1,9 @@
+name = "kashmir-art-factory"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kashmir-art-factory-db"
+database_id = "1bb01ab3-67dd-4f91-8063-6c7a4105c560"
