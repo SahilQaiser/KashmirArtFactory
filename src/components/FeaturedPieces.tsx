@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { getRequestContext } from "@cloudflare/next-on-pages";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import type { Product } from "@/lib/types";
 
 export default async function FeaturedPieces() {
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   const { results } = await env.DB
     .prepare("SELECT * FROM products WHERE featured = 1 ORDER BY sort_order LIMIT 6")
     .all<Product>();

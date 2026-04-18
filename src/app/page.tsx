@@ -18,8 +18,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://kashmirartfactory.in" },
 };
 
-export const runtime = "edge";
-
 export default function HomePage() {
   return (
     <>

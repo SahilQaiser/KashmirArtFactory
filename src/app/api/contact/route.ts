@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getRequestContext } from "@cloudflare/next-on-pages";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export const runtime = "edge";
 
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { env } = getRequestContext();
+    const { env } = await getCloudflareContext<CloudflareEnv>();
     await env.DB.prepare(
       "INSERT INTO contact_messages (id, name, email, phone, message) VALUES (?, ?, ?, ?, ?)"
     )

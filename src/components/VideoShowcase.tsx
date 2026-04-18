@@ -1,8 +1,8 @@
-import { getRequestContext } from "@cloudflare/next-on-pages";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import type { Video } from "@/lib/types";
 
 export default async function VideoShowcase() {
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   const { results } = await env.DB
     .prepare("SELECT * FROM videos ORDER BY sort_order")
     .all<Video>();
