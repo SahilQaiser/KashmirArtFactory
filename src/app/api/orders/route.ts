@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { getRequestContext } from "@cloudflare/next-on-pages";
+
+export const runtime = "edge";
 
 
 export async function POST(req: NextRequest) {
@@ -15,7 +17,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
+    const { env } = getRequestContext();
     await env.DB.prepare(
       "INSERT INTO custom_orders (id, name, email, phone, product_type, description) VALUES (?, ?, ?, ?, ?, ?)"
     )

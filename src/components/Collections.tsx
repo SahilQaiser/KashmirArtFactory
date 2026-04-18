@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { getRequestContext } from "@cloudflare/next-on-pages";
 import type { Collection } from "@/lib/types";
 
 export default async function Collections() {
-  const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
+  const { env } = getRequestContext();
   const { results } = await env.DB
     .prepare("SELECT * FROM collections ORDER BY sort_order")
     .all<Collection>();

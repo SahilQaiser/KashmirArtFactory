@@ -4,10 +4,11 @@ import Footer from "@/components/Footer";
 import CollectionsGallery from "@/components/CollectionsGallery";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { getRequestContext } from "@cloudflare/next-on-pages";
 import VideoShowcase from "@/components/VideoShowcase";
 import type { Product } from "@/lib/types";
 
+export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CollectionsPage() {
-  const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
+  const { env } = getRequestContext();
   const { results: products } = await env.DB
     .prepare("SELECT * FROM products ORDER BY sort_order")
     .all<Product>();

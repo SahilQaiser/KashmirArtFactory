@@ -1,9 +1,9 @@
 import { Star } from "lucide-react";
-import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { getRequestContext } from "@cloudflare/next-on-pages";
 import type { Testimonial } from "@/lib/types";
 
 export default async function Testimonials() {
-  const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
+  const { env } = getRequestContext();
   const { results } = await env.DB
     .prepare("SELECT * FROM testimonials ORDER BY sort_order")
     .all<Testimonial>();
