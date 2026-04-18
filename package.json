@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "latest",
+    "esbuild": "latest",
     "@cloudflare/workers-types": "^4.20250409.0",
     "@types/node": "^20",
     "@types/react": "^18",
