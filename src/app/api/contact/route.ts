@@ -5,8 +5,9 @@ export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message } = await req.json() as {
+      name: string; email: string; phone?: string; message: string;
+    };
 
     if (!name || !email || !message) {
       return NextResponse.json(
